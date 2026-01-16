@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-mesh"></div>
+
+    <div class="title-bar">
+        <div class="app-info">NEO PLAYER <span class="version-tag">BETA</span></div>
+        <div class="window-controls">
+            <button id="min-btn"><i class="ms-Icon ms-Icon--ChromeMinimize"></i></button>
+            <button id="max-btn"><i class="ms-Icon ms-Icon--ChromeRestore"></i></button>
+            <button id="close-btn" class="close"><i class="ms-Icon ms-Icon--ChromeClose"></i></button>
+        </div>
+    </div>
+
+    <div class="main-layout">
+        
+        <nav class="sidebar">
+            <div id="app-logo">
+                <img src="logo.png" alt="Logo" onerror="this.style.display='none'">
+            </div>
+            
+            <div class="nav-links">
+                <button id="nav-home" class="nav-btn active"><i class="ms-Icon ms-Icon--Play"></i> Lecteur</button>
+                <button id="nav-explorer" class="nav-btn"><i class="ms-Icon ms-Icon--FabricFolder"></i> Bibliothèque</button>
+                <button id="nav-radio" class="nav-btn"><i class="ms-Icon ms-Icon--RadioBtnOn"></i> Radio</button>
+                <button id="nav-settings" class="nav-btn"><i class="ms-Icon ms-Icon--Settings"></i> Paramètres</button>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="system-card">
+                    <div class="sys-row-battery">
+                        <i id="battery-icon" class="ms-Icon ms-Icon--Battery0"></i>
+                        <span id="battery-level">--%</span>
+                    </div>
+                    <div class="sys-col-time">
+                        <span id="sys-time">00:00</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content-area">
+
+            <div id="view-player" class="view active">
+                <div class="media-container">
+                    <div id="placeholder">
+                        <i class="ms-Icon ms-Icon--Play" style="font-size: 100px; color:var(--accent); margin-bottom: 30px; filter: drop-shadow(0 0 40px var(--accent-glow));"></i>
+                        <h2>Prêt à lire</h2>
+                        <div class="action-row">
+                            <button id="open-file-btn" class="neon-btn big-btn"><i class="ms-Icon ms-Icon--FabricFolder"></i> Ouvrir un fichier</button>
+                        </div>
+                    </div>
+                    <video id="video-player"></video>
+                    <canvas id="audio-visualizer"></canvas>
+                    <div id="cover-display" class="hidden"><div class="cover-art"><i class="ms-Icon ms-Icon--MusicInCollection"></i></div></div>
+                </div>
+
+                <div class="queue-container">
+                    <div class="panel-header">
+                        <span>FILE D'ATTENTE</span>
+                        <div class="playlist-tools">
+                            <button id="shuffle-btn" class="icon-btn" title="Lecture Aléatoire">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.5 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.707l-3.646 3.647a.5.5 0 0 1-.708-.708L13.793 4H11a.5.5 0 0 1-.5-.5z"/>
+                                    <path d="M14.5 12.5a.5.5 0 0 1-.5.5h-2.5a.5.5 0 0 1 0-1h1.293l-3.647-3.646a.5.5 0 0 1 .708-.708L13.5 11.293V10a.5.5 0 0 1 1 0v2.5z"/>
+                                    <path d="M1.5 12.5a.5.5 0 0 1 0-1h3.793l2.853-2.854a.5.5 0 0 1 .708.708L5.793 12.5H1.5z"/>
+                                    <path d="M1.5 3.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 .354.146l2.853 2.854a.5.5 0 1 1-.708.708L5.293 3.5H1.5z"/>
+                                </svg>
+                            </button>
+                            <button id="clear-playlist-btn" class="icon-btn" title="Vider"><i class="ms-Icon ms-Icon--Delete"></i></button>
+                        </div>
+                    </div>
+                    <ul id="playlist-list"></ul>
+                </div>
+            </div>
+
+            <div id="view-explorer" class="view">
+                <div class="explorer-header">
+                    <div class="address-bar">
+                        <button id="explorer-up-btn" class="nav-icon"><i class="ms-Icon ms-Icon--Up"></i></button>
+                        <div class="path-display" id="explorer-path">Chargement...</div>
+                        <button id="refresh-drives-btn" class="nav-icon"><i class="ms-Icon ms-Icon--Refresh"></i></button>
+                    </div>
+                    <div class="tools-bar">
+                        <div class="search-box">
+                            <i class="ms-Icon ms-Icon--Search"></i>
+                            <input type="text" id="explorer-search" placeholder="Rechercher...">
+                        </div>
+                        <button id="play-folder-btn" class="neon-btn sm">Tout lire</button>
+                    </div>
+                </div>
+                <div id="drives-list" class="drives-bar"></div>
+                <div id="explorer-list" class="explorer-grid"></div>
+            </div>
+
+            <div id="view-radio" class="view centered-view">
+                <div class="settings-card radio-container">
+                    <div class="card-header"><h1><i class="ms-Icon ms-Icon--RadioBtnOn"></i> Radios</h1></div>
+                    <div class="radio-filters"><span class="active">Toutes</span></div>
+                    <div id="radio-grid" class="radio-grid"></div>
+                </div>
+            </div>
+
+            <div id="view-settings" class="view centered-view">
+                <div class="settings-card">
+                    <div class="card-header"><h1>Paramètres</h1></div>
+                    <div class="settings-scroll-area">
+                        
+                        <div class="settings-section">
+                            <h3>Thèmes</h3>
+                            <div class="theme-presets-grid">
+                                <div class="theme-preset" data-theme="neon-blue" style="background: linear-gradient(135deg, #000428, #004e92);"><span>Neon Blue</span></div>
+                                <div class="theme-preset" data-theme="cyber-punk" style="background: linear-gradient(135deg, #2b1055, #7597de);"><span>Cyberpunk</span></div>
+                                <div class="theme-preset" data-theme="matrix" style="background: linear-gradient(135deg, #000000, #0f9b0f);"><span>Matrix</span></div>
+                                <div class="theme-preset" data-theme="sunset" style="background: linear-gradient(135deg, #8E0E00, #1F1C18);"><span>Sunset</span></div>
+                                <div class="theme-preset" data-theme="deep-space" style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);"><span>Deep Space</span></div>
+                                <div class="theme-preset custom-preset" data-theme="custom" id="btn-custom-bg"><span>Custom</span><i class="ms-Icon ms-Icon--Add"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h3>Visuel & Options</h3>
+                            <div class="setting-row"><span>Mode Audio</span><select id="viz-select" class="styled-select"><option value="none">Pochette</option><option value="spectrum">Spectre</option><option value="bars">Barres</option><option value="nebula">Nébuleuse</option></select></div>
+                            <div class="setting-row"><span>Lecture auto</span><label class="switch"><input type="checkbox" id="set-autoplay"><span class="slider"></span></label></div>
+                            <div class="setting-row"><span>Mémoriser dossier</span><label class="switch"><input type="checkbox" id="set-remember-folder"><span class="slider"></span></label></div>
+                            <div class="setting-row"><span>Sortie Audio</span><select id="audio-output-select" class="styled-select"><option value="default">Défaut</option></select></div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h3>Mises à jour</h3>
+                            <div class="update-card">
+                                <div class="update-info">
+                                    <span class="current-ver">Version actuelle : <strong style="color:var(--accent);">1.0.0 PLATINUM</strong></span>
+                                    <span id="update-status" class="update-status">À jour</span>
+                                </div>
+                                <button id="check-update-btn" class="neon-btn sm">Vérifier</button>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h3>Raccourcis Clavier</h3>
+                            <div id="shortcuts-list" class="shortcuts-grid"></div>
+                            <div style="margin-top:10px; font-size:11px; color:#666; font-style:italic;">Cliquez sur une touche pour la modifier.</div>
+                        </div>
+
+                        <div class="settings-section"><button id="clear-data-btn" class="neon-btn danger" style="width:100%">Réinitialiser l'application</button></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="main-dock" class="dock-wrapper">
+        <div class="dock-glass-panel">
+            
+            <div class="seek-integrated">
+                <div id="time-tooltip">0:00</div>
+                <input type="range" id="seek-slider" class="seek-slider" value="0" min="0" step="0.1">
+            </div>
+
+            <div class="dock-controls-area">
+                <div class="dock-left">
+                    <div class="mini-cover"><i class="ms-Icon ms-Icon--MusicInCollection"></i></div>
+                    <div class="track-info">
+                        <div id="track-title" class="t-title">En attente</div>
+                        <div id="track-time-display" class="t-time"><span id="current-time">0:00</span> / <span id="total-time">0:00</span></div>
+                    </div>
+                </div>
+
+                <div class="dock-center">
+                    <button id="prev-btn" class="dock-btn medium" title="Précédent"><i class="ms-Icon ms-Icon--Previous"></i></button>
+                    <button id="play-pause-btn" class="play-fab-large" title="Lecture"><i class="ms-Icon ms-Icon--Play"></i></button>
+                    <button id="next-btn" class="dock-btn medium" title="Suivant"><i class="ms-Icon ms-Icon--Next"></i></button>
+                    <button id="loop-btn" class="dock-btn" title="Répéter"><i class="ms-Icon ms-Icon--RepeatAll"></i></button>
+                </div>
+
+                <div class="dock-right">
+                    <button id="mute-btn" class="dock-btn small"><i class="ms-Icon ms-Icon--Volume3"></i></button>
+                    <input type="range" id="volume-slider" class="vol-slider" value="100" max="100">
+                    <div class="sep"></div>
+                    <button id="fullscreen-btn" class="dock-btn small"><i class="ms-Icon ms-Icon--FullScreen"></i></button>
+                    <button id="speed-btn" class="text-btn">1x</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="context-menu"><div class="ctx-item" id="ctx-close">Fermer</div></div>
+    <div id="toast-container"></div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
