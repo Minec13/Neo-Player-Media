@@ -110,3 +110,74 @@ footer { padding: 50px 0 20px; background: #020205; border-top: 1px solid rgba(2
     .nav-links { display: none; } /* Pour simplifier sur mobile */
     .steps { flex-direction: column; }
 }
+
+/* --- AJOUTS SPECIAUX BETA --- */
+
+/* Badge nav */
+.badge-warning {
+    background: #ffaa00;
+    color: #000;
+    font-weight: 800;
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.4);
+}
+
+/* Bandeau d'alerte en haut */
+.beta-alert {
+    background: rgba(255, 85, 0, 0.15);
+    border: 1px solid #ff5500;
+    color: #ffaa00;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 0 auto 40px; /* Centré avec marge en bas */
+    max-width: 600px;
+    text-align: center;
+    font-size: 0.95rem;
+    animation: pulseAlert 2s infinite;
+}
+
+@keyframes pulseAlert {
+    0% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0.2); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 85, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0); }
+}
+
+/* Lien Bug dans le menu */
+.bug-link {
+    color: #ffaa00 !important;
+    font-weight: 600;
+}
+.bug-link:hover {
+    text-shadow: 0 0 8px #ffaa00;
+}
+
+/* Section Signalement de Bug */
+.bug-container {
+    background: linear-gradient(45deg, #221111, #1a0a0a);
+    border: 1px solid #ff4444;
+    padding: 40px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.bug-text h2 { color: #ff4444; margin-bottom: 15px; font-size: 1.8rem; }
+.bug-text ol { margin-left: 20px; color: #ccc; line-height: 1.8; }
+
+.btn-bug {
+    background: #ff4444;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+    white-space: nowrap;
+}
+.btn-bug:hover {
+    background: #ff2222;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.4);
