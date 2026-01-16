@@ -3,49 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neo Player - Le Futur de la Musique</title>
+    <title>Neo Player - Documentation & Téléchargement</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <nav>
-        <div class="logo">NEO PLAYER</div>
-        <a href="https://github.com/Minec13/Neo-Player-Media" target="_blank" class="github-link">Voir sur GitHub</a>
+        <div class="logo"><i class="fas fa-play-circle"></i> NEO PLAYER <span class="badge">BETA</span></div>
+        <div class="nav-links">
+            <a href="#features">Fonctionnalités</a>
+            <a href="#install">Installation</a>
+            <a href="#shortcuts">Raccourcis</a>
+            <a href="https://github.com/Minec13/Neo-Player-Media" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+        </div>
     </nav>
 
     <header>
-        <div class="hero-content">
-            <h1>Redécouvrez votre <br><span class="gradient-text">Bibliothèque Locale</span></h1>
-            <p>Un lecteur moderne, puissant et personnalisable. Visualizers audio, radios en direct et design futuriste.</p>
-            
-            <div class="buttons">
-                <a href="https://github.com/Minec13/Neo-Player-Media/releases/latest" class="btn-download">
-                    Télécharger pour Windows <span class="version-tag">v1.0.0</span>
-                </a>
+        <div class="container">
+            <div class="hero-text">
+                <h1>Le Lecteur Multimédia <br><span class="glow">Nouvelle Génération</span></h1>
+                <p>Oubliez les lecteurs tristes. Découvrez une interface néon, des visualizers audio réactifs et une bibliothèque locale puissante. Conçu pour Windows.</p>
+                <div class="cta-group">
+                    <a href="https://github.com/Minec13/Neo-Player-Media/releases/latest" class="btn-primary">
+                        <i class="fab fa-windows"></i> Télécharger v1.0.0
+                    </a>
+                    <a href="#features" class="btn-secondary">Découvrir</a>
+                </div>
+                <p class="meta-info">Compatible Windows 10/11 • 64-bits • Open Source</p>
             </div>
-            <p class="small">Compatible Windows 10/11 • Gratuit & Open Source</p>
+            <div class="hero-visual">
+                <div class="abstract-circle"></div>
+            </div>
         </div>
     </header>
 
-    <section class="features">
-        <div class="card">
-            <h3>🎵 Visualizers Audio</h3>
-            <p>Regardez votre musique prendre vie avec des effets de spectre, barres ou nébuleuse réactifs en temps réel.</p>
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">Pourquoi choisir Neo Player ?</h2>
+            <div class="grid-3">
+                <div class="feature-card">
+                    <i class="fas fa-wave-square icon"></i>
+                    <h3>Visualizers Audio</h3>
+                    <p>Spectre, Barres ou Nébuleuse. Regardez votre musique s'animer en temps réel grâce au moteur audio WebGL intégré.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-broadcast-tower icon"></i>
+                    <h3>Radios en Direct</h3>
+                    <p>Accès natif aux plus grandes stations : NRJ, Skyrock, France Inter... Plus besoin de navigateur web.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-folder-open icon"></i>
+                    <h3>Explorateur Intelligent</h3>
+                    <p>Naviguez dans vos disques durs, créez des playlists à la volée et gérez vos dossiers favoris.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt icon"></i>
+                    <h3>Performance</h3>
+                    <p>Construit sur Electron, il est léger, rapide et optimisé pour ne pas ralentir votre PC pendant que vous jouez.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-paint-brush icon"></i>
+                    <h3>Thèmes</h3>
+                    <p>Changez l'ambiance en un clic : Cyberpunk, Matrix, Sunset ou choisissez votre propre image de fond.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-battery-half icon"></i>
+                    <h3>Infos Système</h3>
+                    <p>Gardez un œil sur l'heure et votre batterie directement depuis l'interface du lecteur.</p>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <h3>📻 Radios & Streaming</h3>
-            <p>Accédez à vos stations préférées (NRJ, Skyrock, France Inter...) directement depuis l'interface.</p>
+    </section>
+
+    <section id="install" class="section dark-bg">
+        <div class="container">
+            <h2 class="section-title">Comment Installer ?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Télécharger</h4>
+                    <p>Cliquez sur le bouton "Télécharger" en haut de ce site pour récupérer le fichier <code>.exe</code>.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Lancer l'installation</h4>
+                    <p>Double-cliquez sur le fichier téléchargé. L'installation est automatique.</p>
+                </div>
+                <div class="step warning-step">
+                    <div class="step-number">!</div>
+                    <h4>Alerte Windows ?</h4>
+                    <p>Comme l'application est récente, Windows peut afficher "Ordinateur protégé".</p>
+                    <p>Cliquez sur <strong>"Informations complémentaires"</strong> puis sur <strong>"Exécuter quand même"</strong>.</p>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <h3>🎨 100% Personnalisable</h3>
-            <p>Changez de thème (Cyberpunk, Matrix, Sunset...) ou importez vos propres fonds d'écran.</p>
+    </section>
+
+    <section id="shortcuts" class="section">
+        <div class="container">
+            <h2 class="section-title">Maîtrisez le Lecteur</h2>
+            <p class="subtitle">Utilisez votre clavier pour contrôler la musique sans la souris.</p>
+            
+            <div class="shortcuts-grid">
+                <div class="key-item">
+                    <span class="key">ESPACE</span>
+                    <span class="action">Lecture / Pause</span>
+                </div>
+                <div class="key-item">
+                    <span class="key">→</span>
+                    <span class="action">Suivant</span>
+                </div>
+                <div class="key-item">
+                    <span class="key">←</span>
+                    <span class="action">Précédent</span>
+                </div>
+                <div class="key-item">
+                    <span class="key">↑</span>
+                    <span class="action">Volume +</span>
+                </div>
+                <div class="key-item">
+                    <span class="key">↓</span>
+                    <span class="action">Volume -</span>
+                </div>
+                <div class="key-item">
+                    <span class="key">F</span>
+                    <span class="action">Plein Écran</span>
+                </div>
+                <div class="key-item">
+                    <span class="key">M</span>
+                    <span class="action">Muet</span>
+                </div>
+                <div class="key-item">
+                    <span class="key">S</span>
+                    <span class="action">Mode Aléatoire</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>Développé avec passion par Théo SERVANT.</p>
-        <p>Propulsé par Electron & GitHub.</p>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h3>Neo Player</h3>
+                <p>Développé par Théo SERVANT.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/Minec13/Neo-Player-Media/issues">Signaler un Bug</a>
+                <a href="#">Mentions Légales</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Neo Player Project. Tous droits réservés.
+        </div>
     </footer>
 
 </body>
