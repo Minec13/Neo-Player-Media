@@ -3,102 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neo Player - BETA TEST</title>
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Neo Player Platinum - Beta V2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <nav>
-        <div class="logo"><i class="fas fa-flask"></i> NEO PLAYER <span class="badge badge-warning">BETA INSTABLE</span></div>
-        <div class="nav-links">
-            <a href="#bugs" class="bug-link"><i class="fas fa-bug"></i> Signaler un Bug</a>
-            <a href="#install">Installation</a>
+        <div class="logo">NEO PLAYER <span class="badge">BETA V2</span></div>
+        <div class="links">
+            <a href="#features">Fonctionnalités</a>
+            <a href="https://github.com/Minec13/Neo-Player-Media/issues" target="_blank">Support</a>
             <a href="https://github.com/Minec13/Neo-Player-Media" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
         </div>
     </nav>
 
-    <header>
-        <div class="container">
-            
-            <div class="beta-alert">
-                <i class="fas fa-exclamation-triangle"></i>
-                <strong>ATTENTION : VERSION BETA NON STABLE</strong><br>
-                Cette version est en cours de développement. Elle peut contenir des bugs ou planter.
+    <header class="hero">
+        <div class="hero-content">
+            <h1>L'Expérience Média <br> <span class="neon-text">Ultime & Connectée</span></h1>
+            <p>Radio mondiale, Discord RPC, Égaliseur et Design personnalisable. <br>Le lecteur que votre PC attendait.</p>
+            <div class="cta-group">
+                <a href="https://github.com/Minec13/Neo-Player-Media/releases/latest" class="btn-download">
+                    <i class="fab fa-windows"></i> Télécharger pour Windows
+                    <span class="version">Version 2.0.0 (64-bit)</span>
+                </a>
             </div>
-
-            <div class="hero-text">
-                <h1>Le Lecteur Multimédia <br><span class="glow">Expérimental</span></h1>
-                <p>Testez en avant-première les nouvelles fonctionnalités : Visualizers, Radios et Explorateur. Votre avis est essentiel pour stabiliser le projet.</p>
-                
-                <div class="cta-group">
-                    <a href="https://github.com/Minec13/Neo-Player-Media/releases/latest" class="btn-primary">
-                        <i class="fab fa-windows"></i> Télécharger la Beta v1.0.0
-                    </a>
-                    <a href="#bugs" class="btn-secondary">J'ai trouvé un bug</a>
+            <div class="trust-badge">
+                <i class="fas fa-shield-alt"></i> 100% Gratuit & Open Source
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="app-mockup">
+                <div class="mockup-header">
+                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
                 </div>
-                <p class="meta-info">Usage à vos risques • Sauvegardez vos playlists • Compatible Windows 10/11</p>
+                <div class="mockup-body">
+                    <i class="fas fa-music pulse-icon"></i>
+                    <h3>Neo Player Platinum</h3>
+                </div>
             </div>
         </div>
     </header>
 
-    <section id="bugs" class="section">
-        <div class="container bug-container">
-            <div class="bug-text">
-                <h2>🐛 Chasseurs de Bugs, on a besoin de vous !</h2>
-                <p>Le but de cette version est de trouver ce qui ne va pas. Si l'application plante, si une musique ne se lance pas ou si l'affichage est bizarre :</p>
-                <ol>
-                    <li>Ne paniquez pas, c'est normal en Beta.</li>
-                    <li>Allez sur l'onglet <strong>"Issues"</strong> de notre GitHub.</li>
-                    <li>Décrivez votre problème (ex: "Le bouton lecture ne marche pas quand je clique vite").</li>
-                </ol>
+    <section id="features" class="features">
+        <h2>Pourquoi passer à la <span class="accent">V2</span> ?</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-broadcast-tower icon"></i>
+                <h3>Radio Mondiale</h3>
+                <p>Accédez à +40 000 stations en direct. Recherche intelligente par pays et genre. Ne manquez jamais une émission.</p>
             </div>
-            <div class="bug-action">
-                <a href="https://github.com/Minec13/Neo-Player-Media/issues/new" target="_blank" class="btn-bug">
-                    <i class="fas fa-bug"></i> Ouvrir un Ticket sur GitHub
-                </a>
+
+            <div class="card">
+                <i class="fab fa-discord icon"></i>
+                <h3>Discord RPC</h3>
+                <p>Affichez ce que vous écoutez en temps réel sur votre profil. Titre, Artiste, Temps restant et Statut intelligent.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-sliders-h icon"></i>
+                <h3>Audio Pro</h3>
+                <p>Égaliseur 8 bandes intégré avec presets (Bass Boost, Vocal...). AutoMix pour des transitions fluides sans coupure.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-magic icon"></i>
+                <h3>Ergonomie</h3>
+                <p>Glisser-déposer (Drag & Drop), Thèmes Néons, Widgets Batterie & Heure, Mises à jour automatiques.</p>
             </div>
         </div>
     </section>
 
-    <section id="install" class="section dark-bg">
-        <div class="container">
-            <h2 class="section-title">Installation & Avertissements</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h4>Télécharger</h4>
-                    <p>Récupérez l'installeur <code>.exe</code> via le bouton ci-dessus.</p>
-                </div>
-                <div class="step warning-step">
-                    <div class="step-number">!</div>
-                    <h4>Alerte Windows SmartScreen</h4>
-                    <p>Comme cette application n'est pas encore signée (Beta), Windows va la bloquer.</p>
-                    <p>Cliquez sur <strong>"Informations complémentaires"</strong> -> <strong>"Exécuter quand même"</strong>.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h4>Mises à jour</h4>
-                    <p>Les mises à jour manuelles seront fréquentes pour corriger les bugs signalés.</p>
-                </div>
-            </div>
-        </div>
+    <section class="bottom-cta">
+        <h2>Prêt à redécouvrir votre musique ?</h2>
+        <a href="https://github.com/Minec13/Neo-Player-Media/releases/latest" class="btn-download big">
+            <i class="fas fa-download"></i> OBTENIR NEO PLAYER V2
+        </a>
     </section>
 
     <footer>
-        <div class="container footer-content">
-            <div class="footer-left">
-                <h3>Neo Player Beta</h3>
-                <p>Merci de participer à cette phase de test.</p>
-            </div>
-            <div class="footer-right">
-                <a href="https://github.com/Minec13/Neo-Player-Media">Code Source</a>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 Neo Player Project. Version Instable.
-        </div>
+        <p>&copy; 2026 Neo Player Media. Développé avec ❤️ par <a href="https://github.com/Minec13">Minec13</a>.</p>
     </footer>
 
 </body>
